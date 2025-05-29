@@ -1,0 +1,7 @@
+Vulnerax
+
+first month:
+
+1- Build agent
+    A-Recon Agent :
+        1- build the subdomains enumeration 
