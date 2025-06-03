@@ -1,0 +1,71 @@
+{
+  "timestamp": 1748927115.6702466,
+  "domains": [
+    "testphp.vulnweb.com"
+  ],
+  "subdomains": {
+    "testphp.vulnweb.com": [
+      "testphp.vulnweb.com"
+    ]
+  },
+  "links": {
+    "testphp.vulnweb.com": {
+      "testphp.vulnweb.com": [
+        "http://testphp.vulnweb.com/artists.php?artist=2",
+        "http://testphp.vulnweb.com/artists.php?artist=3",
+        "http://testphp.vulnweb.com/listproducts.php?cat=4",
+        "http://testphp.vulnweb.com/userinfo.php?uname=test",
+        "http://testphp.vulnweb.com/artists.php?artist=1",
+        "http://testphp.vulnweb.com/userinfo.php?pass=test",
+        "http://testphp.vulnweb.com/listproducts.php?cat=3",
+        "http://testphp.vulnweb.com/listproducts.php?cat=2",
+        "http://testphp.vulnweb.com/search.php?test=query",
+        "http://testphp.vulnweb.com/search.php?test=query?searchFor=test",
+        "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "http://testphp.vulnweb.com/search.php?test=query?goButton=test"
+      ]
+    }
+  },
+  "params": {
+    "testphp.vulnweb.com": {
+      "testphp.vulnweb.com": {
+        "http://testphp.vulnweb.com/artists.php?artist=2": [
+          "artist"
+        ],
+        "http://testphp.vulnweb.com/artists.php?artist=3": [
+          "artist"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=4": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/userinfo.php?uname=test": [
+          "uname"
+        ],
+        "http://testphp.vulnweb.com/artists.php?artist=1": [
+          "artist"
+        ],
+        "http://testphp.vulnweb.com/userinfo.php?pass=test": [
+          "pass"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=3": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=2": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query": [
+          "test"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query?searchFor=test": [
+          "test"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=1": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query?goButton=test": [
+          "test"
+        ]
+      }
+    }
+  }
+}

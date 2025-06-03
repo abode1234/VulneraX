@@ -1,0 +1,2 @@
+http://testphp.vulnweb.com/userinfo.php?uname=test
+http://testphp.vulnweb.com/userinfo.php?pass=test

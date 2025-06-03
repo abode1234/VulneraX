@@ -11,6 +11,15 @@ import requests
 warnings.filterwarnings("ignore", message="Unverified HTTPS request")
 
 def _inject_get(url: str, param: str, value: str) -> str:
+    # If param is None, try to replace the value after the last '=' in the URL
+    if param is None:
+        if '=' in url:
+            base, _ = url.rsplit('=', 1)
+            return f"{base}={value}"
+        else:
+            # No '=' in URL, just append payload
+            return url + value
+    # Default: replace param value as before
     parts = urlparse(url)
     qs = parse_qs(parts.query)
     qs[param] = value  # overwrite or add
@@ -60,14 +69,32 @@ class RequestSender:
         """Inject a payload into every parameter in the URL and return a list of (modified URL, metadata)."""
         parts = urlparse(url)
         qs = parse_qs(parts.query)
-        
         if not qs:
-            # If no parameters, just return the original URL
-            return [(url, {"method": "GET", "param": None, "payload": payload})]
-        
+            # If no parameters, try to inject after last '='
+            if '=' in url:
+                injected_url = url.rsplit('=', 1)[0] + '=' + payload
+                meta = {"method": "GET", "param": None, "payload": payload}
+                return [(injected_url, meta)]
+            else:
+                # No '=' in URL, just append payload
+                injected_url = url + payload
+                meta = {"method": "GET", "param": None, "payload": payload}
+                return [(injected_url, meta)]
+        # If multiple parameters, inject payload into all and use POST
+        if len(qs) > 1:
+            injected_url = urlunparse(parts._replace(query=""))
+            data = {param: payload for param in qs.keys()}
+            meta = {
+                "method": "POST",
+                "param": list(qs.keys()),
+                "payload": payload,
+                "original_url": url,
+                "data": data
+            }
+            return [(injected_url, meta)]
+        # If only one parameter, keep previous logic (GET)
         injected = []
         for param in qs.keys():
-            # Overwrite only this param with the payload, keep others as is
             new_qs = qs.copy()
             new_qs[param] = [payload]
             new_query = urlencode(new_qs, doseq=True)
@@ -85,26 +112,22 @@ class RequestSender:
         """Send the request and return the response with metadata."""
         try:
             method = meta.get("method", "GET")
-            param = meta.get("param")
+            data = meta.get("data")
             payload = meta.get("payload")
-            
             # Debug print before sending
-            print(f"[DEBUG] Sending request: url={url} param={param} payload={payload}")
-            
-            # Send the request
-            if method == "GET":
-                response = requests.get(
-                    url, 
-                    headers={"User-Agent": "VulneraX-Scanner/1.0"}, 
+            print(f"[DEBUG] Sending request: url={url} method={method} data={data} payload={payload}")
+            if method == "POST":
+                response = requests.post(
+                    url,
+                    data=data,
+                    headers={"User-Agent": "VulneraX-Scanner/1.0"},
                     timeout=self.timeout,
                     proxies=self.proxies,
                     verify=False
                 )
             else:
-                # Handle POST requests if needed
-                response = requests.post(
-                    url, 
-                    data={param: payload} if param else {}, 
+                response = requests.get(
+                    url,
                     headers={"User-Agent": "VulneraX-Scanner/1.0"},
                     timeout=self.timeout,
                     proxies=self.proxies,
@@ -112,7 +135,6 @@ class RequestSender:
                 )
             # Debug print after response
             print(f"[DEBUG] Got response: url={url} status={response.status_code}")
-            
             # Prepare response data
             result = {
                 "url": url,
@@ -122,9 +144,7 @@ class RequestSender:
                 "meta": meta,
                 "error": None
             }
-            
             return result
-            
         except Exception as e:
             # Debug print on error
             print(f"[DEBUG] Request error: url={url} error={e}")
