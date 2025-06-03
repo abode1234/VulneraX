@@ -56,31 +56,30 @@ class RequestSender:
         if proxies:
             self.proxies = {"http": proxies, "https": proxies}
     
-    def inject(self, url: str, payload: str) -> Tuple[str, Dict[str, Any]]:
-        """Inject a payload into a URL and return the modified URL and metadata."""
-        # Extract parameter from URL
+    def inject(self, url: str, payload: str) -> list[tuple[str, dict]]:
+        """Inject a payload into every parameter in the URL and return a list of (modified URL, metadata)."""
         parts = urlparse(url)
         qs = parse_qs(parts.query)
         
         if not qs:
             # If no parameters, just return the original URL
-            return url, {"method": "GET", "param": None, "payload": payload}
+            return [(url, {"method": "GET", "param": None, "payload": payload})]
         
-        # For simplicity, use the first parameter found
-        param = list(qs.keys())[0]
-        
-        # Create metadata for the request
-        meta = {
-            "method": "GET",
-            "param": param,
-            "payload": payload,
-            "original_url": url
-        }
-        
-        # Inject the payload
-        injected_url = _inject_get(url, param, payload)
-        
-        return injected_url, meta
+        injected = []
+        for param in qs.keys():
+            # Overwrite only this param with the payload, keep others as is
+            new_qs = qs.copy()
+            new_qs[param] = [payload]
+            new_query = urlencode(new_qs, doseq=True)
+            injected_url = urlunparse(parts._replace(query=new_query))
+            meta = {
+                "method": "GET",
+                "param": param,
+                "payload": payload,
+                "original_url": url
+            }
+            injected.append((injected_url, meta))
+        return injected
     
     def send(self, url: str, meta: Dict[str, Any]) -> Dict[str, Any]:
         """Send the request and return the response with metadata."""
@@ -88,6 +87,9 @@ class RequestSender:
             method = meta.get("method", "GET")
             param = meta.get("param")
             payload = meta.get("payload")
+            
+            # Debug print before sending
+            print(f"[DEBUG] Sending request: url={url} param={param} payload={payload}")
             
             # Send the request
             if method == "GET":
@@ -108,6 +110,8 @@ class RequestSender:
                     proxies=self.proxies,
                     verify=False
                 )
+            # Debug print after response
+            print(f"[DEBUG] Got response: url={url} status={response.status_code}")
             
             # Prepare response data
             result = {
@@ -122,6 +126,8 @@ class RequestSender:
             return result
             
         except Exception as e:
+            # Debug print on error
+            print(f"[DEBUG] Request error: url={url} error={e}")
             # Handle errors
             return {
                 "url": url,

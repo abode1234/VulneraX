@@ -45,13 +45,13 @@ def parse_args():
     scan_parser = subparsers.add_parser("scan", help="Run vulnerability scanner")
     scan_parser.add_argument("--threads", type=int, default=30, help="Number of threads to use")
     scan_parser.add_argument("--timeout", type=int, default=8, help="Request timeout in seconds")
-    scan_parser.add_argument("--proxies", help="Proxy to use (e.g., http://127.0.0.1:8080)")
     scan_parser.add_argument("--log-level", choices=["info", "debug"], default="info", help="Logging level")
     scan_parser.add_argument("--targets", help="Custom targets file (default: data/scan_targets.txt)")
     scan_parser.add_argument("--attack-types", help="Comma-separated list of attack types to use (e.g., sqli,xss,path)")
     scan_parser.add_argument("--user-agent", help="Custom User-Agent string for requests")
     scan_parser.add_argument("--cookies", help="Cookies to include with requests (format: name=value;name2=value2)")
     scan_parser.add_argument("--headers", help="Custom headers for requests (format: Header1:value1;Header2:value2)")
+    scan_parser.add_argument("--no-base64", action="store_true", help="Disable base64 encoding for payloads")
     
     # Report commands
     report_parser = subparsers.add_parser("report", help="Generate vulnerability report")
@@ -65,7 +65,6 @@ def parse_args():
     workflow_parser = subparsers.add_parser("workflow", help="Run the full workflow (recon + scan + report)")
     workflow_parser.add_argument("--threads", type=int, default=30, help="Number of threads to use for scanning")
     workflow_parser.add_argument("--timeout", type=int, default=8, help="Request timeout in seconds")
-    workflow_parser.add_argument("--proxies", help="Proxy to use (e.g., http://127.0.0.1:8080)")
     workflow_parser.add_argument("--max-pages", type=int, default=10, help="Maximum pages to crawl per domain")
     workflow_parser.add_argument("--no-wildcards", action="store_true", help="Don't expand wildcard domains")
     workflow_parser.add_argument("--no-bruteforce", action="store_true", help="Disable bruteforce subdomain enumeration")
@@ -77,6 +76,7 @@ def parse_args():
     workflow_parser.add_argument("--report-format", choices=["txt", "html", "json"], default="txt", help="Report format")
     workflow_parser.add_argument("--output", help="Output file for the report", default="vulnerability_report.txt")
     workflow_parser.add_argument("--verbose", action="store_true", help="Enable verbose output")
+    workflow_parser.add_argument("--no-base64", action="store_true", help="Disable base64 encoding for payloads")
     
     args = parser.parse_args()
     
@@ -210,12 +210,17 @@ def run_scan_command(args):
         return
     
     print(f"[*] Running vulnerability scan on targets in {targets_file}")
+    attack_types = None
+    if hasattr(args, 'attack_types') and args.attack_types:
+        attack_types = [t.strip() for t in args.attack_types.split(",") if t.strip()]
+    use_base64 = not getattr(args, 'no_base64', False)
     scanner = ScannerAgent(
         targets=targets_file,
         threads=args.threads,
         timeout=args.timeout,
-        proxies=args.proxies,
-        log_level=args.log_level
+        log_level=args.log_level,
+        attack_types=attack_types,
+        use_base64=use_base64
     )
     scanner.run()
 
@@ -270,12 +275,17 @@ def run_workflow(args):
     # Step 2: Vulnerability Scanning
     print("\n=== Step 2: Vulnerability Scanning ===\n")
     targets_file = os.path.join("data", "scan_targets.txt")
+    attack_types = None
+    if hasattr(args, 'attack_types') and args.attack_types:
+        attack_types = [t.strip() for t in args.attack_types.split(",") if t.strip()]
+    use_base64 = not getattr(args, 'no_base64', False)
     scanner = ScannerAgent(
         targets=targets_file,
         threads=args.threads,
         timeout=args.timeout,
-        proxies=args.proxies,
-        log_level="info"  # Use info level for workflow to avoid excessive output
+        log_level="info",
+        attack_types=attack_types,
+        use_base64=use_base64
     )
     scanner.run()
     

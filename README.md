@@ -1,146 +1,75 @@
-# VulneraX - Advanced Bug Bounty Reconnaissance Tool
+# VulneraX
 
-VulneraX is a powerful reconnaissance tool designed specifically for bug bounty hunters and security researchers. It automates the process of discovering vulnerabilities in web applications by performing comprehensive reconnaissance and scanning operations.
+أداة متكاملة للزحف واكتشاف الثغرات في تطبيقات الويب (Recon & Vulnerability Scanner)
 
-## Features
+---
 
-- Subdomain enumeration with multiple user agents
-- Web crawling with parameter discovery
-- Scope management for bug bounty programs
-- Custom attack type selection
-- Flexible configuration options
-- Detailed reporting capabilities
+## المميزات
+- زحف تلقائي لاكتشاف السبدومينات، الروابط، والبراميترز.
+- تجربة جميع أنواع الهجمات (XSS, SQLi, SSRF, ... إلخ) على كل براميتر.
+- تجربة كل payload بثلاث طرق تشفير (مباشر، url encode، base64، جزئي).
+- توليد تقرير شامل بالنتائج.
+- **بدون أي بروكسي افتراضي**: كل الطلبات تذهب مباشرة للموقع المستهدف.
 
-## Getting Started
+---
 
-### Prerequisites
+## المتطلبات
+- Python 3.8+
+- مكتبات: requests, beautifulsoup4
 
-- Python 3.8 or higher
-- Required Python packages (automatically installed via setup)
+---
 
-### Installation
+## طريقة التشغيل
 
-1. Clone the repository:
+### 1. ضع الدومين المستهدف في السكوب
 ```bash
-git clone https://github.com/abode1234/VulneraX.git
-cd VulneraX
+echo "example.com" > data/scope.txt
 ```
 
-2. Install dependencies:
+### 2. شغل كل شيء دفعة واحدة (الطريقة الأسهل)
 ```bash
-pip install -r requirements.txt
+./run.sh --mode workflow --max-pages 30 --threads 20 --attack-types "xss,sqli,ssrf" --timeout 8
 ```
 
-## Usage
-
-### Step 1: Configure Scope
-
-Before running any scans, you need to configure your target scope. This can be done in two ways:
-
-1. Using scope.txt:
-   - Edit `data/scope.txt` to add your target domains
-   - Each domain should be on a new line
-   - Use wildcards (e.g., `*.example.com`) for subdomain scope
-
-2. Using command-line options:
+### 3. أو شغل كل مرحلة على حدة
+#### (أ) الزحف (Recon):
 ```bash
-./run.sh --add-domain example.com
-./run.sh --remove-domain example.com
-./run.sh --clear-domains
+./run.sh --mode recon --max-pages 30 --threads 20
+```
+#### (ب) الفحص (Scan):
+```bash
+./run.sh --mode scan --attack-types "xss,sqli,ssrf" --threads 20 --timeout 8
+```
+#### (ج) توليد التقرير:
+```bash
+./run.sh --mode report
+# أو مباشرة:
+python3 report_generator.py
 ```
 
-### Step 2: Run Reconnaissance
+---
 
-Basic usage:
-```bash
-./run.sh --target example.com
-```
+## خيارات مهمة
+- `--max-pages`: عدد الصفحات التي يتم زحفها لكل دومين (زدها للمواقع الكبيرة)
+- `--threads`: عدد الـ threads (20-30 جيد لمعظم الأجهزة)
+- `--attack-types`: أنواع الهجمات (مثال: "xss,sqli,ssrf")
+- `--timeout`: مهلة الانتظار لكل طلب (يفضل 8-10 ثواني)
 
-Advanced options:
+---
 
-1. Subdomain Enumeration:
-```bash
-./run.sh --target example.com --no-wildcards --no-bruteforce --wordlist custom-wordlist.txt
-```
+## أين تجد النتائج؟
+- نتائج الزحف: `data/recon_full.json`
+- روابط الفحص: `data/scan_targets.txt`
+- نتائج الفحص: `agent/scan_results.jsonl`
+- التقرير النهائي: `vulnerability_report.txt`
 
-2. Web Crawling:
-```bash
-./run.sh --target example.com --cookies "session=123" --headers "X-Forwarded-For:127.0.0.1"
-```
+---
 
-3. Attack Type Selection:
-```bash
-./run.sh --target example.com --attack-types "sql,xss,ssrf"
-```
+## ملاحظات
+- لا يوجد أي بروكسي افتراضي، كل الطلبات تذهب مباشرة للموقع.
+- إذا أردت تخصيص الـ payloads، عدل الملفات في مجلد `payloads/`.
+- إذا واجهت أي مشكلة أو أردت تخصيص الأداة أكثر، تواصل مع المطور أو افتح issue.
 
-4. Custom User Agent:
-```bash
-./run.sh --target example.com --user-agent "Custom User Agent"
-```
+---
 
-### Step 3: Output and Reporting
-
-By default, results are saved in the `output` directory. You can specify a custom output location:
-```bash
-./run.sh --target example.com --output custom-report.txt
-```
-
-## Command-Line Options
-
-```bash
-./run.sh [options]
-
-Options:
-  --help                    Show this help message
-  --target <domain>        Target domain to scan
-  --output <file>          Output report file
-  --no-wildcards           Skip wildcard subdomain detection
-  --no-bruteforce          Skip subdomain bruteforce
-  --wordlist <file>        Custom wordlist for bruteforce
-  --attack-types <types>   Comma-separated list of attack types
-  --user-agent <ua>        Custom User-Agent string
-  --cookies <cookies>      Custom cookies
-  --headers <headers>      Custom headers
-  --add-domain <domain>    Add domain to scope
-  --remove-domain <domain> Remove domain from scope
-  --clear-domains          Clear all domains from scope
-```
-
-## Scope Management
-
-VulneraX maintains a scope file (`data/scope.txt`) that contains all allowed domains for scanning. You can:
-
-1. Add domains:
-```bash
-./run.sh --add-domain example.com
-```
-
-2. Remove domains:
-```bash
-./run.sh --remove-domain example.com
-```
-
-3. Clear all domains:
-```bash
-./run.sh --clear-domains
-```
-
-## Output Format
-
-The tool generates comprehensive reports that include:
-- Discovered subdomains
-- Web endpoints and parameters
-- Potential vulnerabilities
-- Recommendations for further testing
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+بالتوفيق في الصيد! 🕵️‍♂️

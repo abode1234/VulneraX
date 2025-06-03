@@ -1,7 +1,1242 @@
 {
-  "domain": "vogel.de",
-  "timestamp": 1748577418.0254405,
-  "subdomains": [],
-  "links": {},
-  "params": {}
+  "timestamp": 1748756557.3715458,
+  "domains": [
+    "vulnweb.com"
+  ],
+  "subdomains": {
+    "vulnweb.com": [
+      "admin.vulnweb.com",
+      "api.vulnweb.com",
+      "app.vulnweb.com",
+      "apps.vulnweb.com",
+      "auth.vulnweb.com",
+      "beta.vulnweb.com",
+      "blog.vulnweb.com",
+      "cdn.vulnweb.com",
+      "dev.vulnweb.com",
+      "dns.vulnweb.com",
+      "docs.vulnweb.com",
+      "ftp.vulnweb.com",
+      "gateway.vulnweb.com",
+      "git.vulnweb.com",
+      "gitlab.vulnweb.com",
+      "internal.vulnweb.com",
+      "intranet.vulnweb.com",
+      "jenkins.vulnweb.com",
+      "login.vulnweb.com",
+      "m.vulnweb.com",
+      "mail.vulnweb.com",
+      "mail2.vulnweb.com",
+      "ns1.vulnweb.com",
+      "ns2.vulnweb.com",
+      "portal.vulnweb.com",
+      "prod.vulnweb.com",
+      "remote.vulnweb.com",
+      "secure.vulnweb.com",
+      "server.vulnweb.com",
+      "shop.vulnweb.com",
+      "smtp.vulnweb.com",
+      "stage.vulnweb.com",
+      "staging.vulnweb.com",
+      "status.vulnweb.com",
+      "support.vulnweb.com",
+      "test.vulnweb.com",
+      "vpn.vulnweb.com",
+      "vulnweb.com",
+      "web.vulnweb.com",
+      "webmail.vulnweb.com",
+      "wiki.vulnweb.com",
+      "www.vulnweb.com"
+    ]
+  },
+  "links": {
+    "vulnweb.com": {
+      "api.vulnweb.com": [],
+      "admin.vulnweb.com": [],
+      "apps.vulnweb.com": [],
+      "app.vulnweb.com": [],
+      "auth.vulnweb.com": [],
+      "blog.vulnweb.com": [],
+      "beta.vulnweb.com": [],
+      "cdn.vulnweb.com": [],
+      "dev.vulnweb.com": [],
+      "dns.vulnweb.com": [],
+      "docs.vulnweb.com": [],
+      "ftp.vulnweb.com": [],
+      "gitlab.vulnweb.com": [],
+      "internal.vulnweb.com": [],
+      "intranet.vulnweb.com": [],
+      "gateway.vulnweb.com": [],
+      "jenkins.vulnweb.com": [],
+      "git.vulnweb.com": [],
+      "login.vulnweb.com": [],
+      "m.vulnweb.com": [],
+      "mail.vulnweb.com": [],
+      "mail2.vulnweb.com": [],
+      "ns1.vulnweb.com": [],
+      "ns2.vulnweb.com": [],
+      "portal.vulnweb.com": [],
+      "prod.vulnweb.com": [],
+      "remote.vulnweb.com": [],
+      "secure.vulnweb.com": [],
+      "server.vulnweb.com": [],
+      "shop.vulnweb.com": [],
+      "stage.vulnweb.com": [],
+      "smtp.vulnweb.com": [],
+      "status.vulnweb.com": [],
+      "support.vulnweb.com": [],
+      "staging.vulnweb.com": [],
+      "test.vulnweb.com": [],
+      "vpn.vulnweb.com": [],
+      "web.vulnweb.com": [],
+      "webmail.vulnweb.com": [],
+      "wiki.vulnweb.com": [],
+      "vulnweb.com": [
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__VIEWSTATEGENERATOR=test",
+        "http://testasp.vulnweb.com/Templatize.asp?item=html/about.html",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2",
+        "http://testaspnet.vulnweb.com/about.aspx?__VIEWSTATEGENERATOR=test",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F",
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTVALIDATION=test",
+        "http://testasp.vulnweb.com/showthread.asp?id=0",
+        "http://testasp.vulnweb.com/showthread.asp?id=4",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test",
+        "http://testphp.vulnweb.com/userinfo.php?uname=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg",
+        "http://testphp.vulnweb.com/hpp/?pp=12",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg",
+        "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "http://testphp.vulnweb.com/artists.php?artist=3",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?uuname=test",
+        "http://testaspnet.vulnweb.com/Signup.aspx?__VIEWSTATEGENERATOR=test",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg",
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTTARGET=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTARGUMENT=test",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2",
+        "http://testphp.vulnweb.com/product.php?pic=3",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTTARGET=test",
+        "http://testphp.vulnweb.com/product.php?pic=4",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads/def.html",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml",
+        "http://testphp.vulnweb.com/secured/newuser.php?ucc=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2",
+        "http://testphp.vulnweb.com/product.php?pic=5",
+        "http://testaspnet.vulnweb.com/Signup.aspx?btnSignup=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__EVENTTARGET=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?urname=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__EVENTTARGET=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0",
+        "http://testphp.vulnweb.com/product.php?pic=6",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?btnSend=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/about.aspx?__EVENTTARGET=test",
+        "http://testasp.vulnweb.com/showforum.asp?id=1",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTTARGET=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?upass2=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__VIEWSTATEGENERATOR=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads/def.html",
+        "http://testphp.vulnweb.com/userinfo.php?pass=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__VIEWSTATE=test",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0",
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/login.aspx?__VIEWSTATEGENERATOR=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1",
+        "http://testaspnet.vulnweb.com/Signup.aspx?__VIEWSTATE=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?upass=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?signup=test",
+        "http://testaspnet.vulnweb.com/login.aspx?btnLogin=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/Signup.aspx?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?tbComment=test",
+        "http://testasp.vulnweb.com/showthread.asp?id=2",
+        "http://testasp.vulnweb.com/showthread.asp?id=1",
+        "http://testasp.vulnweb.com/showforum.asp?id=2",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTARGUMENT=test",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F",
+        "http://testphp.vulnweb.com/artists.php?artist=2",
+        "http://testphp.vulnweb.com/secured/newuser.php?uemail=test",
+        "http://testhtml5.vulnweb.com/login?password=test",
+        "http://testaspnet.vulnweb.com/login.aspx?tbUsername=test",
+        "http://testphp.vulnweb.com/listproducts.php?cat=4",
+        "http://testphp.vulnweb.com/search.php?test=query?searchFor=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTTARGET=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTVALIDATION=test",
+        "http://testphp.vulnweb.com/product.php?pic=7",
+        "http://testaspnet.vulnweb.com/default.aspx?__VIEWSTATEGENERATOR=test",
+        "http://testaspnet.vulnweb.com/about.aspx?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?tbComment=test",
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test",
+        "http://testphp.vulnweb.com/artists.php?artist=1",
+        "http://testaspnet.vulnweb.com/about.aspx?__EVENTVALIDATION=test",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__VIEWSTATE=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test",
+        "http://testphp.vulnweb.com/listproducts.php?cat=2",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__VIEWSTATEGENERATOR=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?tbComment=test",
+        "http://testasp.vulnweb.com/showforum.asp?id=0",
+        "http://testphp.vulnweb.com/listproducts.php?cat=3",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg",
+        "http://testphp.vulnweb.com/listproducts.php?artist=1",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads/def.html",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3",
+        "http://testphp.vulnweb.com/product.php?pic=1",
+        "http://testaspnet.vulnweb.com/login.aspx?cbPersistCookie=test",
+        "http://testaspnet.vulnweb.com/about.aspx?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/login.aspx?tbPassword=test",
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTTARGET=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0",
+        "http://testhtml5.vulnweb.com/login?username=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?btnSend=test",
+        "http://testaspnet.vulnweb.com/Signup.aspx?tbPassword=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?uphone=test",
+        "http://testphp.vulnweb.com/product.php?pic=2",
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__VIEWSTATE=test",
+        "http://testphp.vulnweb.com/listproducts.php?artist=3",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3",
+        "http://testaspnet.vulnweb.com/login.aspx?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?btnSend=test",
+        "http://testaspnet.vulnweb.com/default.aspx?__VIEWSTATE=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?uaddress=test",
+        "http://testphp.vulnweb.com/search.php?test=query",
+        "http://testphp.vulnweb.com/listproducts.php?artist=2",
+        "http://testaspnet.vulnweb.com/Signup.aspx?tbUsername=test",
+        "http://testphp.vulnweb.com/search.php?test=query?goButton=test",
+        "http://testasp.vulnweb.com/showthread.asp?id=3"
+      ],
+      "www.vulnweb.com": [
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__VIEWSTATEGENERATOR=test",
+        "http://testasp.vulnweb.com/Templatize.asp?item=html/about.html",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2",
+        "http://testaspnet.vulnweb.com/about.aspx?__VIEWSTATEGENERATOR=test",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F",
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTVALIDATION=test",
+        "http://testasp.vulnweb.com/showthread.asp?id=0",
+        "http://testasp.vulnweb.com/showthread.asp?id=4",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test",
+        "http://testphp.vulnweb.com/userinfo.php?uname=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg",
+        "http://testaspnet.vulnweb.com/Signup.aspx?__EVENTARGUMENT=test",
+        "http://testphp.vulnweb.com/hpp/?pp=12",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg",
+        "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "http://testphp.vulnweb.com/artists.php?artist=3",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?uuname=test",
+        "http://testaspnet.vulnweb.com/Signup.aspx?__VIEWSTATEGENERATOR=test",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg",
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTTARGET=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTARGUMENT=test",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2",
+        "http://testphp.vulnweb.com/product.php?pic=3",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTTARGET=test",
+        "http://testphp.vulnweb.com/product.php?pic=4",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads/def.html",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml",
+        "http://testphp.vulnweb.com/secured/newuser.php?ucc=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2",
+        "http://testphp.vulnweb.com/product.php?pic=5",
+        "http://testaspnet.vulnweb.com/Signup.aspx?btnSignup=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?urname=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0",
+        "http://testphp.vulnweb.com/product.php?pic=6",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?btnSend=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__VIEWSTATE=test",
+        "http://testasp.vulnweb.com/showforum.asp?id=1",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTTARGET=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?upass2=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__VIEWSTATEGENERATOR=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads/def.html",
+        "http://testphp.vulnweb.com/userinfo.php?pass=test",
+        "http://testaspnet.vulnweb.com/Signup.aspx?__EVENTTARGET=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__VIEWSTATE=test",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0",
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/login.aspx?__VIEWSTATEGENERATOR=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1",
+        "http://testaspnet.vulnweb.com/Signup.aspx?__VIEWSTATE=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?upass=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?signup=test",
+        "http://testaspnet.vulnweb.com/login.aspx?btnLogin=test",
+        "http://testaspnet.vulnweb.com/Signup.aspx?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?tbComment=test",
+        "http://testasp.vulnweb.com/showthread.asp?id=2",
+        "http://testasp.vulnweb.com/showthread.asp?id=1",
+        "http://testasp.vulnweb.com/showforum.asp?id=2",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTARGUMENT=test",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F",
+        "http://testphp.vulnweb.com/artists.php?artist=2",
+        "http://testphp.vulnweb.com/secured/newuser.php?uemail=test",
+        "http://testhtml5.vulnweb.com/login?password=test",
+        "http://testaspnet.vulnweb.com/login.aspx?tbUsername=test",
+        "http://testphp.vulnweb.com/listproducts.php?cat=4",
+        "http://testphp.vulnweb.com/search.php?test=query?searchFor=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTTARGET=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTVALIDATION=test",
+        "http://testphp.vulnweb.com/product.php?pic=7",
+        "http://testaspnet.vulnweb.com/default.aspx?__VIEWSTATEGENERATOR=test",
+        "http://testaspnet.vulnweb.com/about.aspx?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?tbComment=test",
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTARGUMENT=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test",
+        "http://testphp.vulnweb.com/artists.php?artist=1",
+        "http://testaspnet.vulnweb.com/about.aspx?__EVENTVALIDATION=test",
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__VIEWSTATE=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test",
+        "http://testphp.vulnweb.com/listproducts.php?cat=2",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__VIEWSTATEGENERATOR=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?tbComment=test",
+        "http://testasp.vulnweb.com/showforum.asp?id=0",
+        "http://testphp.vulnweb.com/listproducts.php?cat=3",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg",
+        "http://testphp.vulnweb.com/listproducts.php?artist=1",
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads/def.html",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3",
+        "http://testphp.vulnweb.com/product.php?pic=1",
+        "http://testaspnet.vulnweb.com/login.aspx?cbPersistCookie=test",
+        "http://testaspnet.vulnweb.com/login.aspx?tbPassword=test",
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTTARGET=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__EVENTTARGET=test",
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0",
+        "http://testhtml5.vulnweb.com/login?username=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?btnSend=test",
+        "http://testaspnet.vulnweb.com/Signup.aspx?tbPassword=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?uphone=test",
+        "http://testphp.vulnweb.com/product.php?pic=2",
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTVALIDATION=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__EVENTARGUMENT=test",
+        "http://testphp.vulnweb.com/listproducts.php?artist=3",
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3",
+        "http://testaspnet.vulnweb.com/login.aspx?__VIEWSTATE=test",
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?btnSend=test",
+        "http://testaspnet.vulnweb.com/default.aspx?__VIEWSTATE=test",
+        "http://testphp.vulnweb.com/secured/newuser.php?uaddress=test",
+        "http://testphp.vulnweb.com/search.php?test=query",
+        "http://testphp.vulnweb.com/listproducts.php?artist=2",
+        "http://testaspnet.vulnweb.com/Signup.aspx?tbUsername=test",
+        "http://testphp.vulnweb.com/search.php?test=query?goButton=test",
+        "http://testasp.vulnweb.com/showthread.asp?id=3"
+      ]
+    }
+  },
+  "params": {
+    "vulnweb.com": {
+      "api.vulnweb.com": {},
+      "admin.vulnweb.com": {},
+      "apps.vulnweb.com": {},
+      "app.vulnweb.com": {},
+      "auth.vulnweb.com": {},
+      "blog.vulnweb.com": {},
+      "beta.vulnweb.com": {},
+      "cdn.vulnweb.com": {},
+      "dev.vulnweb.com": {},
+      "dns.vulnweb.com": {},
+      "docs.vulnweb.com": {},
+      "ftp.vulnweb.com": {},
+      "gitlab.vulnweb.com": {},
+      "internal.vulnweb.com": {},
+      "intranet.vulnweb.com": {},
+      "gateway.vulnweb.com": {},
+      "jenkins.vulnweb.com": {},
+      "git.vulnweb.com": {},
+      "login.vulnweb.com": {},
+      "m.vulnweb.com": {},
+      "mail.vulnweb.com": {},
+      "mail2.vulnweb.com": {},
+      "ns1.vulnweb.com": {},
+      "ns2.vulnweb.com": {},
+      "portal.vulnweb.com": {},
+      "prod.vulnweb.com": {},
+      "remote.vulnweb.com": {},
+      "secure.vulnweb.com": {},
+      "server.vulnweb.com": {},
+      "shop.vulnweb.com": {},
+      "stage.vulnweb.com": {},
+      "smtp.vulnweb.com": {},
+      "status.vulnweb.com": {},
+      "support.vulnweb.com": {},
+      "staging.vulnweb.com": {},
+      "test.vulnweb.com": {},
+      "vpn.vulnweb.com": {},
+      "web.vulnweb.com": {},
+      "webmail.vulnweb.com": {},
+      "wiki.vulnweb.com": {},
+      "vulnweb.com": {
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__VIEWSTATEGENERATOR=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/Templatize.asp?item=html/about.html": [
+          "item"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/about.aspx?__VIEWSTATEGENERATOR=test": [
+          "__VIEWSTATEGENERATOR"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTVALIDATION=test": [
+          "__EVENTVALIDATION"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=0": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=4": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/userinfo.php?uname=test": [
+          "uname"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F": [
+          "RetURL"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg": [
+          "file"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg": [
+          "file"
+        ],
+        "http://testphp.vulnweb.com/hpp/?pp=12": [
+          "pp"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg": [
+          "file"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=1": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/artists.php?artist=3": [
+          "artist"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?uuname=test": [
+          "uuname"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?__VIEWSTATEGENERATOR=test": [
+          "__VIEWSTATEGENERATOR"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg": [
+          "file"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTTARGET=test": [
+          "__EVENTTARGET"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTARGUMENT=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2": [
+          "RetURL"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=3": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTTARGET=test": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=4": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads/def.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml": [
+          "RetURL"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?ucc=test": [
+          "ucc"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=5": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?btnSignup=test": [
+          "btnSignup"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__EVENTTARGET=test": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?urname=test": [
+          "urname"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__EVENTTARGET=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__VIEWSTATE=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__EVENTVALIDATION=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=6": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?btnSend=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__VIEWSTATE=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/about.aspx?__EVENTTARGET=test": [
+          "__EVENTTARGET"
+        ],
+        "http://testasp.vulnweb.com/showforum.asp?id=1": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTTARGET=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?upass2=test": [
+          "upass2"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__VIEWSTATEGENERATOR=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads/def.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/userinfo.php?pass=test": [
+          "pass"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__VIEWSTATE=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTARGUMENT=test": [
+          "__EVENTARGUMENT"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__VIEWSTATEGENERATOR=test": [
+          "__VIEWSTATEGENERATOR"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?__VIEWSTATE=test": [
+          "__VIEWSTATE"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?upass=test": [
+          "upass"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?signup=test": [
+          "signup"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?btnLogin=test": [
+          "btnLogin"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__EVENTARGUMENT=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?__EVENTVALIDATION=test": [
+          "__EVENTVALIDATION"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?tbComment=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=2": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=1": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showforum.asp?id=2": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTARGUMENT=test": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg": [
+          "file"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F": [
+          "RetURL"
+        ],
+        "http://testphp.vulnweb.com/artists.php?artist=2": [
+          "artist"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?uemail=test": [
+          "uemail"
+        ],
+        "http://testhtml5.vulnweb.com/login?password=test": [
+          "password"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?tbUsername=test": [
+          "tbUsername"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=4": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query?searchFor=test": [
+          "test"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTTARGET=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTVALIDATION=test": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=7": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__VIEWSTATEGENERATOR=test": [
+          "__VIEWSTATEGENERATOR"
+        ],
+        "http://testaspnet.vulnweb.com/about.aspx?__VIEWSTATE=test": [
+          "__VIEWSTATE"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTARGUMENT=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?tbComment=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTARGUMENT=test": [
+          "__EVENTARGUMENT"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTVALIDATION=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/artists.php?artist=1": [
+          "artist"
+        ],
+        "http://testaspnet.vulnweb.com/about.aspx?__EVENTVALIDATION=test": [
+          "__EVENTVALIDATION"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__VIEWSTATE=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=2": [
+          "cat"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__VIEWSTATEGENERATOR=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?tbComment=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showforum.asp?id=0": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=3": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg": [
+          "file"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?artist=1": [
+          "artist"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg": [
+          "file"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads/def.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=1": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?cbPersistCookie=test": [
+          "cbPersistCookie"
+        ],
+        "http://testaspnet.vulnweb.com/about.aspx?__EVENTARGUMENT=test": [
+          "__EVENTARGUMENT"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?tbPassword=test": [
+          "tbPassword"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTTARGET=test": [
+          "__EVENTTARGET"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0": [
+          "RetURL"
+        ],
+        "http://testhtml5.vulnweb.com/login?username=test": [
+          "username"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__EVENTARGUMENT=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?btnSend=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?tbPassword=test": [
+          "tbPassword"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?uphone=test": [
+          "uphone"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=2": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTVALIDATION=test": [
+          "__EVENTVALIDATION"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__VIEWSTATE=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__VIEWSTATE=test": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?artist=3": [
+          "artist"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__VIEWSTATE=test": [
+          "__VIEWSTATE"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?btnSend=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__VIEWSTATE=test": [
+          "__VIEWSTATE"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?uaddress=test": [
+          "uaddress"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query": [
+          "test"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?artist=2": [
+          "artist"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?tbUsername=test": [
+          "tbUsername"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query?goButton=test": [
+          "test"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=3": [
+          "id"
+        ]
+      },
+      "www.vulnweb.com": {
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__VIEWSTATEGENERATOR=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/Templatize.asp?item=html/about.html": [
+          "item"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/about.aspx?__VIEWSTATEGENERATOR=test": [
+          "__VIEWSTATEGENERATOR"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FDefault%2Easp%3F": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTVALIDATION=test": [
+          "__EVENTVALIDATION"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=0": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=4": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/userinfo.php?uname=test": [
+          "uname"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FSearch%2Easp%3F": [
+          "RetURL"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/7.jpg": [
+          "file"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/6.jpg": [
+          "file"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?__EVENTARGUMENT=test": [
+          "__EVENTARGUMENT"
+        ],
+        "http://testphp.vulnweb.com/hpp/?pp=12": [
+          "pp"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/5.jpg": [
+          "file"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=1": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/artists.php?artist=3": [
+          "artist"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__VIEWSTATEGENERATOR=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?uuname=test": [
+          "uuname"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?__VIEWSTATEGENERATOR=test": [
+          "__VIEWSTATEGENERATOR"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/1.jpg": [
+          "file"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTTARGET=test": [
+          "__EVENTTARGET"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTARGUMENT=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2": [
+          "RetURL"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=3": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTTARGET=test": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=4": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads/def.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml": [
+          "RetURL"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?ucc=test": [
+          "ucc"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D2": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=5": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?btnSignup=test": [
+          "btnSignup"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?urname=test": [
+          "urname"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__VIEWSTATE=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__EVENTVALIDATION=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=6": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?btnSend=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__VIEWSTATE=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showforum.asp?id=1": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTTARGET=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?upass2=test": [
+          "upass2"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__VIEWSTATEGENERATOR=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads/def.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/userinfo.php?pass=test": [
+          "pass"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?__EVENTTARGET=test": [
+          "__EVENTTARGET"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__VIEWSTATE=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTARGUMENT=test": [
+          "__EVENTARGUMENT"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__VIEWSTATEGENERATOR=test": [
+          "__VIEWSTATEGENERATOR"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D1": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?__VIEWSTATE=test": [
+          "__VIEWSTATE"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?upass=test": [
+          "upass"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?signup=test": [
+          "signup"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?btnLogin=test": [
+          "btnLogin"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?__EVENTVALIDATION=test": [
+          "__EVENTVALIDATION"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?tbComment=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=2": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=1": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showforum.asp?id=2": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTARGUMENT=test": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/2.jpg": [
+          "file"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FDefault%2Easp%3F": [
+          "RetURL"
+        ],
+        "http://testphp.vulnweb.com/artists.php?artist=2": [
+          "artist"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?uemail=test": [
+          "uemail"
+        ],
+        "http://testhtml5.vulnweb.com/login?password=test": [
+          "password"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?tbUsername=test": [
+          "tbUsername"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=4": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query?searchFor=test": [
+          "test"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTTARGET=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__EVENTVALIDATION=test": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=7": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__VIEWSTATEGENERATOR=test": [
+          "__VIEWSTATEGENERATOR"
+        ],
+        "http://testaspnet.vulnweb.com/about.aspx?__VIEWSTATE=test": [
+          "__VIEWSTATE"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html?__EVENTARGUMENT=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?tbComment=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__EVENTARGUMENT=test": [
+          "__EVENTARGUMENT"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__EVENTVALIDATION=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/artists.php?artist=1": [
+          "artist"
+        ],
+        "http://testaspnet.vulnweb.com/about.aspx?__EVENTVALIDATION=test": [
+          "__EVENTVALIDATION"
+        ],
+        "http://testasp.vulnweb.com/Login.asp?RetURL=%2FSearch%2Easp%3F": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?__VIEWSTATE=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2FTemplatize%2Easp%3Fitem%3Dhtml%2Fabout%2Ehtml": [
+          "RetURL"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__EVENTVALIDATION=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=2": [
+          "cat"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?__VIEWSTATEGENERATOR=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3?tbComment=test": [
+          "id"
+        ],
+        "http://testasp.vulnweb.com/showforum.asp?id=0": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?cat=3": [
+          "cat"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/4.jpg": [
+          "file"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?artist=1": [
+          "artist"
+        ],
+        "http://testphp.vulnweb.com/showimage.php?file=./pictures/3.jpg": [
+          "file"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads/def.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=0&NewsAd=ads%2fdef.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=3": [
+          "id"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=1": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?cbPersistCookie=test": [
+          "cbPersistCookie"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?tbPassword=test": [
+          "tbPassword"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTTARGET=test": [
+          "__EVENTTARGET"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__EVENTTARGET=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testasp.vulnweb.com/Register.asp?RetURL=%2Fshowforum%2Easp%3Fid%3D0": [
+          "RetURL"
+        ],
+        "http://testhtml5.vulnweb.com/login?username=test": [
+          "username"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?btnSend=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?tbPassword=test": [
+          "tbPassword"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?uphone=test": [
+          "uphone"
+        ],
+        "http://testphp.vulnweb.com/product.php?pic=2": [
+          "pic"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__EVENTVALIDATION=test": [
+          "__EVENTVALIDATION"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=2&NewsAd=ads%2fdef.html?__VIEWSTATE=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=2?__VIEWSTATE=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3&NewsAd=ads%2fdef.html?__EVENTARGUMENT=test": [
+          "id",
+          "NewsAd"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?artist=3": [
+          "artist"
+        ],
+        "http://testaspnet.vulnweb.com/ReadNews.aspx?id=3": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/login.aspx?__VIEWSTATE=test": [
+          "__VIEWSTATE"
+        ],
+        "http://testaspnet.vulnweb.com/Comments.aspx?id=0?btnSend=test": [
+          "id"
+        ],
+        "http://testaspnet.vulnweb.com/default.aspx?__VIEWSTATE=test": [
+          "__VIEWSTATE"
+        ],
+        "http://testphp.vulnweb.com/secured/newuser.php?uaddress=test": [
+          "uaddress"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query": [
+          "test"
+        ],
+        "http://testphp.vulnweb.com/listproducts.php?artist=2": [
+          "artist"
+        ],
+        "http://testaspnet.vulnweb.com/Signup.aspx?tbUsername=test": [
+          "tbUsername"
+        ],
+        "http://testphp.vulnweb.com/search.php?test=query?goButton=test": [
+          "test"
+        ],
+        "http://testasp.vulnweb.com/showthread.asp?id=3": [
+          "id"
+        ]
+      }
+    }
+  }
 }

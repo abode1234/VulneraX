@@ -140,6 +140,51 @@ def generate_report(results: List[Dict[str, Any]]) -> None:
         for error, count in errors.most_common(5):  # Top 5 errors
             print(f"  {error}: {count} occurrences")
     
+    # بعد ملخص الهجمات، أضف قسم جديد لكشف مؤشرات كل الثغرات بناءً على محتوى الرد
+    print("\nVulnerability Indicators (based on response content):")
+    INDICATORS = {
+        "sql": [
+            "sql syntax", "mysql", "error in your sql syntax", "unexpected token",
+            "unterminated string", "warning:", "you have an error in your sql syntax", "syntax error", "sqlite", "psql", "pg_query", "oracle", "mssql", "native client", "unclosed quotation mark"
+        ],
+        "xss": [
+            "<script", "<img", "<svg", "onerror", "alert(", "javascript:", "payload reflected", "<iframe", "ontoggle", "<math"
+        ],
+        "ssrf": [
+            "127.0.0.1", "localhost", "internal server error", "connection refused", "cannot connect", "refused to connect", "aws metadata", "169.254.169.254"
+        ],
+        "path": [
+            "root:", "/etc/passwd", "c:\\windows", "win.ini", "system32", "boot.ini", "[boot loader]"
+        ],
+        "command": [
+            "uid=", "gid=", "root:x:", "command not found", "No such file or directory", "sh: ", "bash: ", "syntax error near unexpected token"
+        ],
+        "xxe": [
+            "xml parser", "entity", "DOCTYPE", "SYSTEM", "external entity", "parser error"
+        ],
+        "ssti": [
+            "jinja", "mustache", "template syntax error", "{{7*7}}", "500 internal server error", "unexpected 'end of file'"
+        ],
+    }
+    # استخرج فقط الأنواع التي تم اختبارها فعليًا
+    tested_types = set(entry.get('attack_type') for entry in results)
+    for vuln_type, keywords in INDICATORS.items():
+        if vuln_type not in tested_types:
+            continue  # لا تطبع إلا الأنواع التي تم اختبارها
+        print(f"\n{vuln_type.upper()} Indicators:")
+        found = 0
+        for entry in results:
+            if entry.get('attack_type') != vuln_type:
+                continue
+            content = entry.get("content_preview", "").lower()
+            if any(k in content for k in keywords):
+                found += 1
+                print(f"[!] Potential {vuln_type.upper()} at {entry['url']}")
+                print(f"    Payload: {entry['payload']}")
+                print(f"    Response: {content[:120]}")
+        if found == 0:
+            print(f"  No {vuln_type.upper()} indicators found in response content.")
+    
     print("\n" + "="*80)
     print(" "*25 + "END OF VULNERABILITY SCAN REPORT")
     print("="*80 + "\n")

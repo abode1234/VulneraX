@@ -1,4 +1,3 @@
-
 """scanner_agent.py
 Main entry‑point – consumes a list of URLs (with parameters) and orchestrates
 sending payloads + logging the responses.  Designed for multithreaded use.
@@ -27,6 +26,8 @@ class ScannerAgent:
         timeout: int = 5,
         proxies: Optional[str] = None,
         log_level: str = "info",
+        attack_types: list = None,
+        use_base64: bool = True,
     ) -> None:
         # Set up logging level
         self.log_level = log_level.lower()
@@ -53,6 +54,8 @@ class ScannerAgent:
         self.threads = threads
         self.timeout = timeout
         self.proxies = proxies
+        self.attack_types = attack_types
+        self.use_base64 = use_base64
         
         if self.verbose:
             print(f"[*] Scanner configuration:")
@@ -63,7 +66,7 @@ class ScannerAgent:
         # Initialize components
         self.logger = ResponseLogger("scan_results.jsonl")
         self.requester = RequestSender(timeout=self.timeout, proxies=self.proxies)
-        self.loader = PayloadLoader(verbose=self.verbose)
+        self.loader = PayloadLoader(verbose=self.verbose, attack_types=self.attack_types, use_base64=self.use_base64)
         
         # Print payload statistics if in verbose mode
         if self.verbose:
@@ -73,11 +76,7 @@ class ScannerAgent:
     # Internal helpers
     # ------------------------------------------------------
     def _scan_single(self, url: str) -> None:
-        """Scan a single URL with all attack payloads.
-        
-        Args:
-            url: The URL to scan
-        """
+        """Scan a single URL with all attack payloads on all parameters."""
         if self.verbose:
             print(f"[*] Scanning target: {url}")
             
@@ -91,10 +90,11 @@ class ScannerAgent:
             attack_count += 1
             for payload_variant in payloads:  # already includes encodings
                 try:
-                    injected_url, meta = self.requester.inject(url, payload_variant)
-                    resp = self.requester.send(injected_url, meta)
-                    self.logger.handle_response(resp, attack_type, payload_variant)
-                    payload_count += 1
+                    injected_list = self.requester.inject(url, payload_variant)
+                    for injected_url, meta in injected_list:
+                        resp = self.requester.send(injected_url, meta)
+                        self.logger.handle_response(resp, attack_type, payload_variant)
+                        payload_count += 1
                 except Exception as e:
                     if self.verbose:
                         print(f"    [!] Error with {attack_type} payload: {e}")

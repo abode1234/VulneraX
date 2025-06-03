@@ -6,7 +6,7 @@
 # Set default values
 THREADS=30
 TIMEOUT=8
-PROXIES="http://127.0.0.1:8080"
+# PROXIES="http://127.0.0.1:8080"
 MAX_PAGES=10
 SCOPE_FILE="data/scope.txt"
 MODE="workflow"
@@ -100,7 +100,7 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
         --proxies)
-            PROXIES="$2"
+            # PROXIES="$2"
             shift 2
             ;;
         --max-pages)
@@ -142,6 +142,10 @@ while [[ $# -gt 0 ]]; do
         --headers)
             HEADERS="$2"
             shift 2
+            ;;
+        --no-base64)
+            NO_BASE64=true
+            shift
             ;;
         --report-format)
             REPORT_FORMAT="$2"
@@ -190,24 +194,29 @@ if [ "$NO_BRUTEFORCE" = true ]; then
     BRUTEFORCE_FLAG="--no-bruteforce"
 fi
 
+# Set up no-base64 flag
+NO_BASE64_FLAG=""
+if [ "$NO_BASE64" = true ]; then
+    NO_BASE64_FLAG="--no-base64"
+fi
+
 # Run the selected mode
 case "$MODE" in
     workflow)
         echo "[*] Starting VulneraX workflow with the following settings:"
         echo "    - Threads: $THREADS"
         echo "    - Timeout: $TIMEOUT seconds"
-        echo "    - Proxies: $PROXIES"
         echo "    - Max pages to crawl: $MAX_PAGES"
         echo "    - Log level: $LOG_LEVEL"
         echo "    - Report format: $REPORT_FORMAT"
         echo ""
         
         ./vulnerax_manager.py workflow --threads "$THREADS" --timeout "$TIMEOUT" \
-            --proxies "$PROXIES" --max-pages "$MAX_PAGES" $WILDCARD_FLAG \
-            --no-bruteforce "$BRUTEFORCE_FLAG" --wordlist "$WORDLIST" \
+            --max-pages "$MAX_PAGES" $WILDCARD_FLAG \
+            $BRUTEFORCE_FLAG --wordlist "$WORDLIST" \
             --attack-types "$ATTACK_TYPES" --user-agent "$USER_AGENT" \
             --cookies "$COOKIES" --headers "$HEADERS" --report-format "$REPORT_FORMAT" \
-            --output "$OUTPUT_REPORT"
+            --output "$OUTPUT_REPORT" $NO_BASE64_FLAG
         
         echo ""
         echo "[+] Workflow completed"
@@ -239,16 +248,15 @@ case "$MODE" in
         echo "[*] Starting vulnerability scan with the following settings:"
         echo "    - Threads: $THREADS"
         echo "    - Timeout: $TIMEOUT seconds"
-        echo "    - Proxies: $PROXIES"
         echo "    - Log level: $LOG_LEVEL"
         echo "    - Attack types: ${ATTACK_TYPES:-'all'}"
         echo "    - User-Agent: ${USER_AGENT:-'default'}"
         echo ""
         
         ./vulnerax_manager.py scan --threads "$THREADS" --timeout "$TIMEOUT" \
-            --proxies "$PROXIES" --log-level "$LOG_LEVEL" \
+            --log-level "$LOG_LEVEL" \
             --attack-types "$ATTACK_TYPES" --user-agent "$USER_AGENT" \
-            --cookies "$COOKIES" --headers "$HEADERS"
+            --cookies "$COOKIES" --headers "$HEADERS" $NO_BASE64_FLAG
         
         echo ""
         echo "[+] Scan completed"
@@ -345,13 +353,12 @@ case "$MODE" in
         echo "[*] Starting VulneraX workflow with the following settings:"
         echo "    - Threads: $THREADS"
         echo "    - Timeout: $TIMEOUT seconds"
-        echo "    - Proxies: $PROXIES"
         echo "    - Max pages to crawl: $MAX_PAGES"
         echo "    - Log level: $LOG_LEVEL"
         echo ""
         
         ./vulnerax_manager.py workflow --threads "$THREADS" --timeout "$TIMEOUT" \
-            --proxies "$PROXIES" --max-pages "$MAX_PAGES" $WILDCARD_FLAG
+            --max-pages "$MAX_PAGES" $WILDCARD_FLAG
         
         echo ""
         echo "[+] Workflow completed"
@@ -380,12 +387,11 @@ case "$MODE" in
         echo "[*] Starting vulnerability scan with the following settings:"
         echo "    - Threads: $THREADS"
         echo "    - Timeout: $TIMEOUT seconds"
-        echo "    - Proxies: $PROXIES"
         echo "    - Log level: $LOG_LEVEL"
         echo ""
         
         ./vulnerax_manager.py scan --threads "$THREADS" --timeout "$TIMEOUT" \
-            --proxies "$PROXIES" --log-level "$LOG_LEVEL"
+            --log-level "$LOG_LEVEL"
         
         echo ""
         echo "[+] Scan completed"
